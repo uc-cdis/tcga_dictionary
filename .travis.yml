@@ -13,8 +13,8 @@ deploy:
     secure: Cp/sCF8Sb+ci69Y5bHTetTijRXhntIMS5FwpD4X+5SM5uAcCs6Iv2bWXIzxUQ+30Ho5OeK9csvPULVQjknBh5y5KmQvtTAu8aJNsuXKZ3Iur8G7USHlYWBoCBtPvH4ZpGA31VunSMpu8RSG4YmNWqrmWoJNjwqreJA1l+z/ClOp7Z5oV37C9uwQ9w7ZOClI2YGqntKu8N6JnT4o++Yf1DuiAQZ0hrrDeLTRrCWNFOnu+oQyoSMGgPdtP5iTbDiUuHl8OM1dfTv7qYRWpaS+ge8UnXfuMjpemy89C15vWi6WNNavFlJNGFdA+nZxiqrGaMdDyc2i7w2RrV/rIY5bfwXkCZA2SlAc2G29PgH/3VBxd43kJiDlKRojPMz5QQA4dklYMmjy6hnqFJOGM9VVmGqlTPRLhPkWscHKYeaHuOxcXEvEWhHxuGyzasO0Ge8LB6GJH9X//k5N5FlsbchbX0L6bBKpg9s1naosuI56MIzceoXZ5/CHWBSpT4BxtJ6EIC4ad9SxlDF3dZyBM62/5Ac5pNZhc7jvw2Kz1sHAYktwntMXot6CugBuWJXFyGvXYn2RFqrv3aTR9Iu+/NfKRdKGhaF0cxIfSCzAFvVYRJ7fAGYVmi0gkOGlKDuDA84OwGRryaGkbCC7gpXSqsa7+3m9y9+F3HLAUPeXZeVfkVtQ=
   bucket: dictionary-artifacts
   local-dir: artifacts
-  upload-dir: openaccess_dictionary/$TRAVIS_BRANCH
+  upload-dir: tcga_dictionary/$TRAVIS_BRANCH
   skip_cleanup: true
   on:
-    repo: uc-cdis/openaccess_dictionary
+    repo: uc-cdis/tcga_dictionary
     all_branches: true
