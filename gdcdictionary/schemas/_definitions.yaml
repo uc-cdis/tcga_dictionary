@@ -256,8 +256,21 @@ tcga_file_properties:
   experimental_strategy:
     description: A general description of the experimental strategy used to generate the file.
     type: string
+  dcc_file_id:
+    description: The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., "FI208496").
+    type: string
   donor_ids:
-    description: A list of donor_ids related to this file.
+    description: A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.
+    type: array
+    items:
+      type: string
+  sample_ids:
+    description: A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.
+    type: array
+    items:
+      type: string
+  specimen_ids:
+    description: A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.
     type: array
     items:
       type: string
@@ -267,27 +280,17 @@ tcga_file_properties:
   participant_barcode:
     description: The TCGA barcode for the corresponding donor or study participant.
     type: string
+  specimen_barcode:
+    description: The TCGA barcode for the corresponding specimen.
+    type: string
   sample_barcode:
     description: The TCGA barcode for the corresponding sample.
     type: string
   primary_site:
     description: A general description of the experimental strategy used to generate the file.
     type: string
-  sample_ids:
-    description: A list of sample IDs corresponding to this file.
-    type: array
-    items:
-      type: string
-  specimen_ids:
-    description: A list of specimen IDs corresponding to this file.
-    type: array
-    items:
-      type: string
   specimen_type:
     description: A description of the corresponding biospecimen.
-    type: string
-  dcc_file_id:
-    description: The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., "FI208496").
     type: string
   reference_genome_url:
     description: A general description of the experimental strategy used to generate the file.
