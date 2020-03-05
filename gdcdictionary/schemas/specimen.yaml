@@ -1,0 +1,175 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "specimen"
+title: Specimen
+type: object
+nodeTerms: null
+namespace: https://gen3.datacommons.io/
+category: biospecimen
+program: '*'
+project: '*'
+description: Any material sample taken from a biological entity for testing, diagnostic,
+  propagation, treatment or research purposes, including a sample obtained from a
+  living organism or taken from the biological object after halting of all its life
+  functions. Biospecimen can contain one or more components including but not limited
+  to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory
+  products. In the case of contrived samples, it describes any material obtained from
+  a normal donor.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: subjects
+    backref: specimens
+    label: related_to
+    target_type: subject
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - subjects
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  anatomic_site:
+    description: The term that best describes the primary anatomic site of the collected
+      sample.
+    type: string
+
+  anatomic_site_other:
+    description: If 'Other (specify)' was chosen for 'anatomic_site', enter the anatomic
+      site here.
+    type: string
+
+  comments:
+    description: General comments about the sample or sampling procedure.
+    type: string
+
+  composition:
+    description: The term that best describes the composition of the sample.
+    type: string
+
+  composition_other:
+    type: string
+
+  days_to_collection:
+    description: The number of days between the subject's Index Event and the date
+      the sample was collected.
+    type: integer
+
+  days_to_frozen:
+    description: The number of days between the subject's Index Event and the date
+      the sample was frozen.
+    type: integer
+
+  days_to_shipped:
+    description: The number of days between the subject's Index Event and the date
+      the sample was shipped.
+    type: integer
+
+  device_used:
+    description: List device(s) used for procuring the sample.
+    type: string
+
+  fasting_status:
+    description: Fasting Status at the time of sample collection
+    enum:
+      - Fasted (Minimum Of 8 Hours)
+      - Low Fat Diet
+      - Not Fasted, No Low Fat Diet
+
+  laterality:
+    description: The side of the organ or body the biospecimen was taken from (e.g.,
+      'Left' if 'anatomic_site' was 'Lung' and it was taken from the left lung)
+    enum:
+      - Bilateral
+      - Left
+      - Not Reported
+      - Right
+      - Unknown
+
+  preservation_method:
+    description: The text term that describes the method used to preserve the biospecimen
+      after collection.
+    enum:
+      - Cryopreserved
+      - FFPE
+      - Fresh
+      - Frozen
+      - Not Reported
+      - OCT
+      - Snap Frozen
+      - Unknown
+
+  procured_or_purchased:
+    description: Was the biospecimen purchased from a vendor or procured from a study
+      participant.
+    enum:
+      - Procured
+      - Purchased
+
+  procurement_method:
+    description: The term that best describes the method used to extract the sample
+      from the subject.
+    type: string
+
+  procurement_method_other:
+    description: If 'Other (specify)' was chosen for 'procurement_method', specify
+      the method of sample procurement here.
+    type: string
+
+  specimen_container:
+    description: The type of container used for sample collection.
+    type: string
+
+  specimen_id:
+    description: In cases where the same biospecimen is used by multiple institutions,
+      a deidenfitied id may be provided here to tie those together. Work with your
+      collaborators assure the same id is used for the sample in all projects.
+    type: string
+
+  specimen_barcode:
+    description: The TCGA barcode for the sample.
+    type: string
+
+  specimen_volume:
+    description: The initial volume of the sample in milliliters (mL).
+    type: number
+
+  specimen_weight:
+    description: The initial mass of the sample in milligrams (mg).
+    type: number
+
+  specimen_year:
+    description: The year the sample was obtained.
+    type: integer
+
+  storage_temperature:
+    description: The sample storage temperature (C)
+    type: number
+
+  time_point:
+    description: Indicate a simple text term that describes the time-point at which
+      the sample was collected (e.g., "pre-deployment", "post-operation", "baseline",
+      etc.). To add more detailed longitudinal information, use the visit_id property
+      to link to a record in the visit node.
+    type: string
+
+  subjects:
+    $ref: "_definitions.yaml#/to_one"

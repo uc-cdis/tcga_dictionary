@@ -1,0 +1,20 @@
+language: python
+python:
+- '3.6'
+before_script:
+- yes | python setup.py install
+- git clone https://github.com/uc-cdis/dictionaryutils; cd dictionaryutils
+script:
+- "./run_tests.sh"
+deploy:
+  provider: s3
+  access_key_id: AKIAZRNPHKJIGBW4QA2H
+  secret_access_key:
+    secure: Cp/sCF8Sb+ci69Y5bHTetTijRXhntIMS5FwpD4X+5SM5uAcCs6Iv2bWXIzxUQ+30Ho5OeK9csvPULVQjknBh5y5KmQvtTAu8aJNsuXKZ3Iur8G7USHlYWBoCBtPvH4ZpGA31VunSMpu8RSG4YmNWqrmWoJNjwqreJA1l+z/ClOp7Z5oV37C9uwQ9w7ZOClI2YGqntKu8N6JnT4o++Yf1DuiAQZ0hrrDeLTRrCWNFOnu+oQyoSMGgPdtP5iTbDiUuHl8OM1dfTv7qYRWpaS+ge8UnXfuMjpemy89C15vWi6WNNavFlJNGFdA+nZxiqrGaMdDyc2i7w2RrV/rIY5bfwXkCZA2SlAc2G29PgH/3VBxd43kJiDlKRojPMz5QQA4dklYMmjy6hnqFJOGM9VVmGqlTPRLhPkWscHKYeaHuOxcXEvEWhHxuGyzasO0Ge8LB6GJH9X//k5N5FlsbchbX0L6bBKpg9s1naosuI56MIzceoXZ5/CHWBSpT4BxtJ6EIC4ad9SxlDF3dZyBM62/5Ac5pNZhc7jvw2Kz1sHAYktwntMXot6CugBuWJXFyGvXYn2RFqrv3aTR9Iu+/NfKRdKGhaF0cxIfSCzAFvVYRJ7fAGYVmi0gkOGlKDuDA84OwGRryaGkbCC7gpXSqsa7+3m9y9+F3HLAUPeXZeVfkVtQ=
+  bucket: dictionary-artifacts
+  local-dir: artifacts
+  upload-dir: openaccess_dictionary/$TRAVIS_BRANCH
+  skip_cleanup: true
+  on:
+    repo: uc-cdis/openaccess_dictionary
+    all_branches: true
