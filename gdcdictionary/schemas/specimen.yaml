@@ -171,5 +171,9 @@ properties:
       to link to a record in the visit node.
     type: string
 
+  specimen_type:
+    description: The type of specimen with respect to cancer; is it a specimen dervied from normal tissue or a tumor?
+    type: string
+
   subjects:
     $ref: "_definitions.yaml#/to_one"
