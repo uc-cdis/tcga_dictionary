@@ -142,6 +142,10 @@ properties:
       collaborators assure the same id is used for the sample in all projects.
     type: string
 
+  sample_type:
+    description: The type of sample with respect to cancer; is it a specimen dervied from normal tissue or a tumor?
+    type: string
+
   sample_volume:
     description: The initial volume of the sample in milliliters (mL).
     type: number
@@ -157,6 +161,7 @@ properties:
   storage_temperature:
     description: The sample storage temperature (C)
     type: number
+
 
   time_point:
     description: Indicate a simple text term that describes the time-point at which
