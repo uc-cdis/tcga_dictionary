@@ -44,7 +44,9 @@ properties:
   a260_a280_ratio:
     description: Ratio 260 and 280 nm
     type: number
-
+  aliquot_barcode:
+    description: The TCGA barcode of the aliquot (e.g., "TCGA-AX-A1CI-11A-11R-A137-07").
+    type: string
   aliquot_container:
     description: The device in which the final aliquot is held.
     type: string
@@ -132,6 +134,13 @@ properties:
     description: The temperature, in centigrade, at which the aliquot was preserved
       and/or stored.
     type: number
+
+  tumor_type:
+    description: The tumor type.
+    type: string
+  tumor_subtype:
+    description: The tumor subtype.
+    type: string
 
   samples:
     $ref: "_definitions.yaml#/to_many"
