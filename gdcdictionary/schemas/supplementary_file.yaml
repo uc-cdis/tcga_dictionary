@@ -63,8 +63,7 @@ properties:
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
-    enum:
-      - Supplementary File
+    type: string
 
   data_description:
     description: Provide a brief description of the supplementary file.

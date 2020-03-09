@@ -67,24 +67,17 @@ properties:
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
-    enum:
-      - Expression Array Data
+    type: string
 
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
-    enum:
-      - CEL
-      - TSV
-      - TXT
+    type: string
 
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-    enum:
-      - Expression Array Variation
-      - Expression Raw Intensity
-
+    type: string
   experimental_strategy:
     term:
       $ref: "_terms.yaml#/experimental_strategy"

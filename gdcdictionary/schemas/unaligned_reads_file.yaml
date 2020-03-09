@@ -63,28 +63,21 @@ properties:
 
   $ref: "_definitions.yaml#/tcga_file_properties"
 
+
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
-    enum:
-      - Raw Sequencing Data
-      - Sequencing Data
-      - Sequencing Reads
+    type: string
 
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
-    enum:
-      - BAM
-      - FASTA
-      - FASTQ
+    type: string
 
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-    enum:
-      - Unaligned Reads
-
+    type: string
   read_pair_number:
     term:
       $ref: "_terms.yaml#/read_pair_number"

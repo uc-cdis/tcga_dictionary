@@ -66,22 +66,17 @@ properties:
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
-    enum:
-      - Combined Nucleotide Variation
-      - Simple Nucleotide Variation
+    type: string
 
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
-    enum:
-      - VCF
+    type: string
 
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-    enum:
-      - Annotated Somatic Mutation
-      - Raw Simple Somatic Mutation
+    type: string
 
   variant_calling_workflow:
     description: Indicate the variant calling workflow or pipeline used to generate
