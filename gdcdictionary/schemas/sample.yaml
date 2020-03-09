@@ -162,7 +162,12 @@ properties:
     description: The sample storage temperature (C)
     type: number
 
-
+  specimen_barcode:
+    description: The TCGA barcode of the specimen from which this sample is derived.
+    type: string
+  specimen_id:
+    description: The specimen ID (SP#) of the specimen from which this sample is derived.
+    type: string
   time_point:
     description: Indicate a simple text term that describes the time-point at which
       the sample was collected (e.g., "pre-deployment", "post-operation", "baseline",

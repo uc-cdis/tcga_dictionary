@@ -277,7 +277,7 @@ tcga_file_properties:
   aliquot_barcode:
     description: The TCGA barcode for the corresponding aliquot.
     type: string
-  participant_barcode:
+  donor_barcode:
     description: The TCGA barcode for the corresponding donor or study participant.
     type: string
   specimen_barcode:
