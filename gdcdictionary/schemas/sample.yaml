@@ -164,6 +164,11 @@ properties:
       etc.). To add more detailed longitudinal information, use the visit_id property
       to link to a record in the visit node.
     type: string
-
+  tumor_type:
+    description: The tumor type.
+    type: string
+  tumor_subtype:
+    description: The tumor subtype.
+    type: string
   specimens:
     $ref: "_definitions.yaml#/to_one"
