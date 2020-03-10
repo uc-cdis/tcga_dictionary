@@ -37,20 +37,15 @@ links:
         backref: expression_arrays
         label: data_from
         target_type: aliquot
-        multiplicity: one_to_one
+        multiplicity: many_to_many
         required: false
       - name: subjects
         backref: expression_arrays
         label: data_from
         target_type: subject
-        multiplicity: one_to_one
+        multiplicity: many_to_many
         required: false
-      - name: aliquots
-        backref: expression_arrays
-        label: data_from
-        target_type: aliquot
-        multiplicity: one_to_one
-        required: false
+
 required:
   - submitter_id
   - type
@@ -118,11 +113,7 @@ properties:
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
-
   aliquots:
-    $ref: "_definitions.yaml#/to_one"
-
+    $ref: "_definitions.yaml#/to_many"
   subjects:
-    $ref: "_definitions.yaml#/to_one"
-  aliquots:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/to_many"

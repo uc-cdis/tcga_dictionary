@@ -38,7 +38,7 @@ links:
         backref: supplementary_files
         label: data_from
         target_type: subject
-        multiplicity: many_to_one
+        multiplicity: many_to_many
         required: false
       - name: aliquots
         backref: supplementary_files
@@ -87,6 +87,6 @@ properties:
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
   subjects:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/to_many"
   aliquots:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/to_many"
