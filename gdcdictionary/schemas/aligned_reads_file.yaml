@@ -44,7 +44,12 @@ links:
         target_type: subject
         multiplicity: many_to_one
         required: false
-
+      - name: aliquots
+        backref: aligned_reads_files
+        label: data_from
+        target_type: aliquot
+        multiplicity: many_to_one
+        required: false
 required:
   - submitter_id
   - type
@@ -105,11 +110,6 @@ properties:
       $ref: "_terms.yaml#/data_type"
     type: string
 
-  experimental_strategy:
-    term:
-      $ref: "_terms.yaml#/experimental_strategy"
-    type: string
-
   molecular_tagging_workflow:
     description: A description of the specific bioinformatics workflow or pipeline
       used for molecular tagging of sequenced reads.
@@ -122,4 +122,6 @@ properties:
     $ref: "_definitions.yaml#/to_many"
 
   subjects:
+    $ref: "_definitions.yaml#/to_one"
+  aliquots:
     $ref: "_definitions.yaml#/to_one"

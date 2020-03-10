@@ -40,7 +40,12 @@ links:
         target_type: subject
         multiplicity: many_to_one
         required: false
-
+      - name: aliquots
+        backref: supplementary_files
+        label: data_from
+        target_type: aliquot
+        multiplicity: many_to_many
+        required: false
 
 required:
   - submitter_id
@@ -82,4 +87,6 @@ properties:
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
   subjects:
+    $ref: "_definitions.yaml#/to_one"
+  aliquots:
     $ref: "_definitions.yaml#/to_one"

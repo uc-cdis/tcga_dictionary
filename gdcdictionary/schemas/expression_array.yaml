@@ -45,7 +45,12 @@ links:
         target_type: subject
         multiplicity: one_to_one
         required: false
-
+      - name: aliquots
+        backref: expression_arrays
+        label: data_from
+        target_type: aliquot
+        multiplicity: one_to_one
+        required: false
 required:
   - submitter_id
   - type
@@ -78,12 +83,6 @@ properties:
     term:
       $ref: "_terms.yaml#/data_type"
     type: string
-  experimental_strategy:
-    term:
-      $ref: "_terms.yaml#/experimental_strategy"
-    enum:
-      - Expression Array
-      - Expression Array Genotyping
 
   platform:
     term:
@@ -124,4 +123,6 @@ properties:
     $ref: "_definitions.yaml#/to_one"
 
   subjects:
+    $ref: "_definitions.yaml#/to_one"
+  aliquots:
     $ref: "_definitions.yaml#/to_one"

@@ -44,6 +44,12 @@ links:
         target_type: aligned_reads_file
         multiplicity: many_to_many
         required: false
+      - name: aliquots
+        backref: variant_call_files
+        label: data_from
+        target_type: aliquot
+        multiplicity: many_to_many
+        required: false
 
 required:
   - submitter_id
@@ -108,6 +114,8 @@ properties:
     $ref: "_definitions.yaml#/to_one"
 
   subjects:
+    $ref: "_definitions.yaml#/to_many"
+  aliquots:
     $ref: "_definitions.yaml#/to_many"
 
   aligned_reads_files:
