@@ -1,0 +1,13 @@
+name: Build TCGA dictionary
+
+on: push
+
+jobs:
+  dictionary:
+    name: Build and Deploy Dictionary
+    uses: uc-cdis/.github/.github/workflows/dictionary_push.yaml
+    with:
+      DIRECTORY: "tcga_dictionary"
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
